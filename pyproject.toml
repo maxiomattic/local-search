@@ -1,0 +1,26 @@
+[project]
+name = "localsearch"
+version = "0.1.0"
+description = "Private semantic search over local photos (CLIP) and documents (Ollama embeddings), backed by Qdrant."
+requires-python = ">=3.10"
+dependencies = [
+    "requests",
+    "pillow",
+    "sentence-transformers",
+    "pypdf",
+    "python-docx",
+]
+
+[project.optional-dependencies]
+ui = ["streamlit"]
+dev = ["pytest"]
+
+[project.scripts]
+localsearch = "localsearch.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["localsearch"]
